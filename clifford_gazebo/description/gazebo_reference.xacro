@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <gazebo reference="front_left_wrist">
+    <material>Gazebo/Green</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>200.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+  
+  <gazebo reference="front_left_leg">
+    <material>Gazebo/Black</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>200.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+
+  <gazebo reference="front_left_foot">
+    <material>Gazebo/Green</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>200.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+  
+  <!--  
+    <gazebo reference="front_right_wrist">
+    <material>Gazebo/Red</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="front_right_leg">
+    <material>Gazebo/Black</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+
+  <gazebo reference="front_right_foot">
+    <material>Gazebo/Red</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>100.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+
+  <gazebo reference="back_right_wrist">
+    <material>Gazebo/Blue</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="back_right_leg">
+    <material>Gazebo/Black</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+
+  <gazebo reference="back_right_foot">
+    <material>Gazebo/Blue</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>100.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+
+    <gazebo reference="back_left_wrist">
+    <material>Gazebo/Purple</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="back_left_leg">
+    <material>Gazebo/Black</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+  </gazebo>
+
+  <gazebo reference="back_left_foot">
+    <material>Gazebo/Purple</material>
+    <gravity>1</gravity>
+    <selfCollide>1</selfCollide>
+    <mu1>100.5</mu1>
+    <mu2>100.5</mu2>
+    <maxVel>0.0</maxVel>
+    <dampingFactor>0.5</dampingFactor>
+  </gazebo>
+  -->
+</robot>

@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <!-- Necessary hardware interface for controller -->
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!--
+        <joint name="back_left_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+            
+        <joint name="back_left_leg_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="back_left_foot_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="back_right_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+            
+        <joint name="back_right_leg_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="back_right_foot_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+        -->
+
+        <joint name="front_left_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            </joint>
+        
+        <joint name="front_left_leg_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="front_left_foot_joint">
+            <param name="mimic">front_left_foot_joint</param>
+            <param name="multiplier">1</param>
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface> 
+        </joint>
+        
+        <!--
+        <joint name="front_right_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            </joint>
+            
+        <joint name="front_right_leg_joint">
+            <param name="mimic">front_right_leg_joint</param>
+            <param name="multiplier">1</param>
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="front_right_foot_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+    -->
+    </ros2_control>
+
+    
+    <!-- Clifford's specified controller -->
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">  
+            <robotNamespace>clifford</robotNamespace>
+            <parameters>$(find clifford_gazebo)/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot >
