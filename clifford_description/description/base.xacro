@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <link name="base_link"/>
+
+  <link name="base_footprint">
+    <inertial>
+      <origin xyz="-8.3007E-11 -1.4484E-09 -0.00034261" rpy="0 0 0" />
+      <mass value="0.48631" />
+      <inertia
+        ixx="0.00020679"
+        ixy="1.921E-06"
+        ixz="-1.4063E-13"
+        iyy="0.00035815"
+        iyz="5.0084E-13"
+        izz="0.00051558" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/base_footprint.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+    
+  <joint name="base_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <parent link="base_link"/>
+      <child link="base_footprint"/>
+      <axis xyz="0.0 0.0 0.0"/>
+  </joint>
+</robot>

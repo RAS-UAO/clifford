@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <!-- Description fo Clifford's front left shoulder -->
+  <link name="front_left_shoulder">
+    <inertial>
+      <origin xyz="0.00119495363353914 0.000176809986865173 -0.0222104021426803" rpy="0 0 0" />
+      <mass value="0.0251261421169069" />
+      <inertia
+        ixx="7.27601970126055E-06"
+        ixy="-2.80375542100427E-12"
+        ixz="-4.26373747591097E-07"
+        iyy="7.42765684115745E-06"
+        iyz="-1.05248374132499E-08"
+        izz="9.65290321850445E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_shoulder.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_left_shoulder_joint" type="revolute">
+    <origin xyz="0.0958750011976808 0.0701085708841457 -0.00014342068143483" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="front_left_shoulder" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-2.618" upper="2.618" effort="1.5" velocity="10.5" />
+    <dynamics damping="0.4" friction="0.4" />
+  </joint>
+
+  <!-- Description fo Clifford's front left elbow -->
+  <link name="front_left_elbow">
+    <inertial>
+      <origin xyz="0.0530168092815065 0.000531743532155654 -0.00867531583230774" rpy="0 0 0" />
+      <mass value="0.128871239808788" />
+      <inertia
+        ixx="1.82866748457515E-05"
+        ixy="9.03752705072398E-07"
+        ixz="-1.81783232455001E-09"
+        iyy="3.16365309194226E-05"
+        iyz="1.06647082290351E-07"
+        izz="3.20527619287412E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_elbow.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_left_elbow_joint" type="revolute">
+    <origin xyz="2.4999E-05 -2.4999E-05 -0.048" rpy="0 1.5708 0" />
+    <parent link="front_left_shoulder" />
+    <child link="front_left_elbow" />
+    <axis xyz="0.61743 0.78662 0" />
+    <limit lower="-2.618" upper="2.618" effort="1.5" velocity="10.5" />
+    <dynamics damping="0.4" friction="0.4" />
+  </joint>
+
+  <!-- Description fo Clifford's front left wrist -->
+  <link name="front_left_wrist">
+    <inertial>
+      <origin xyz="-0.0501854721037143 0.00567090354060215 -0.00139060398951915" rpy="0 0 0" />
+      <mass value="0.0434021710789183" />
+      <inertia
+        ixx="9.31275503211254E-06"
+        ixy="5.08254401901519E-06"
+        ixz="-3.79905192223709E-06"
+        iyy="4.22800639447833E-05"
+        iyz="3.54790961698845E-07"
+        izz="4.88119505798513E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_wrist.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://clifford_description/meshes/front_left_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_left_wrist_joint" type="revolute">
+    <origin xyz="0.10603 0 0" rpy="3.1416 0 3.1416" />
+    <parent link="front_left_elbow" />
+    <child link="front_left_wrist" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.618" upper="2.618" effort="1.5" velocity="10.5" />
+    <dynamics damping="0.4" friction="0.4" />
+  </joint>
+
+  <!-- Description fo Clifford's front left foot -->
+  <link name="front_left_foot" />
+
+  <joint name="front_left_foot_joint" type="fixed">
+    <origin xyz="-0.1417 0.013275 -0.014113" rpy="0 0 0" />
+    <parent link="front_left_wrist" />
+    <child link="front_left_foot" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>
